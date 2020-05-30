@@ -30,7 +30,8 @@
                     <h2>a better way to camp</h2>
                 </div>
                 <div class="col-md-4 col-xl-2 mt-4">
-                    <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>
+                    <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#reserveModal">Reserve
+                        Campsite</a>
                 </div>
             </div>
         </div>
@@ -49,41 +50,41 @@
                         <form>
                             <div class="form-group row">
                                 <label for="numCampers" class="col-sm-6 col-form-label">Number of Campers:</label>
-                                    <div class="col">
-                                        <select name="numCampers" id="numCampers" class="form-control">
-                                            <option selected>Select...</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
-                                    </div>
-                            </div>      
+                                <div class="col">
+                                    <select name="numCampers" id="numCampers" class="form-control">
+                                        <option selected>Select...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label for="col-form-label-sm" class="col col-sm-6 ">Date:</label>
-                                    <div class="form-group col-sm">
-                                        <input type="date" class="form-control" id="date" name="date" placeholder="date">
-                                    </div>
-                            </div>                                                                                          
-                            <div class="form-group row">                                    
-                                <label class="col-sm-6 col-form-label">Campsite Type</label>                                    
-                                        <div class="col btn-group btn-group-toggle" data-toggle="buttons">
-                                            <label class="btn btn-success active">
-                                            <input type="radio" name="siteType" id="siteTent" value="tent"
-                                                autocomplete="off" checked> Tent</label>
-                                            <label class="btn btn-primary">
-                                            <input type="radio" name="siteType" id="siteRV" value="RV"
-                                                autocomplete="off">RV</label>                                        
-                                        </div>
-                            </div>       
-                            <div class="form-group row">
-                                <div class="col">                              
-                                    <button type="submit" class="btn btn-secondary">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">Search</button>                                    
+                                <div class="form-group col-sm">
+                                    <input type="date" class="form-control" id="date" name="date" placeholder="date">
                                 </div>
-                            </div>                    
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label">Campsite Type</label>
+                                <div class="col btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" name="siteType" id="siteTent" value="tent"
+                                            autocomplete="off" checked> Tent</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" name="siteType" id="siteRV" value="RV"
+                                            autocomplete="off">RV</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-secondary">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -207,6 +208,14 @@
                         <span class="carousel-control-next-icon"></span>
                         <span class="sr-only">Next</span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carouselPause">
+                            <i class="fa fa-pause"> </i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carouselPlay">
+                            <i class="fa fa-play"> </i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -304,7 +313,17 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-
+    <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000 } );
+            $("#carouselPause").click(function(){
+                $(".carousel").carousel("pause");
+            });
+            $("#carouselPlay").click(function(){
+                $(".carousel").carousel("cycle");
+            });
+        });
+    </script>
 
 </body>
 
